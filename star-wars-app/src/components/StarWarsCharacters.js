@@ -12,7 +12,7 @@ export default function StarWarsCharacters() {
   const [characters, setCharacters] = useState([]);
   useEffect(() => {
     setIsLoading(true);
-    const getCharacters = async () => {
+      const getCharacters = async () => {
       const characters = await getData(url);
       console.log(characters);
       setNext(characters.next);
@@ -34,7 +34,7 @@ export default function StarWarsCharacters() {
   };
 
   return (
-    <div>
+    <div data-testid='load'>
       {isLoading ? (
         <Loader
           type="ThreeDots"
@@ -46,7 +46,7 @@ export default function StarWarsCharacters() {
       ) : (
         <>
           {characters.map(character => (
-            <div key={character.url}>{character.name}</div>
+            <div key={character.url} data-testid='apiDiv'>{character.name}</div>
           ))}
         </>
       )}

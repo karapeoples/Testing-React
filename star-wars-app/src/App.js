@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import StarWarsCharacters from "./components/StarWarsCharacters";
+import  StarWarsCharacters  from "./components/StarWarsCharacters";
 
 function App() {
   return (
